@@ -1,0 +1,46 @@
+nototools (0.2.13-2) unstable; urgency=high
+
+  * Team upload.
+  * Bump Standards-Version to 4.5.1.
+  * Bump debhelper compat to v13.
+  * debian/rules: Use dh13 syntax.
+  * debian/rules: Remove modified nototools/_version.py to avoid
+    FTBFS. (Closes: #973061)
+
+ -- Boyuan Yang <byang@debian.org>  Tue, 09 Feb 2021 09:29:39 -0500
+
+nototools (0.2.13-1) unstable; urgency=medium
+
+  * New upstream version 0.2.13
+  * Drop all patches: applied in new release
+  * Build-Depend on python3-setuptools-scm
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 28 Sep 2020 18:11:13 -0400
+
+nototools (0.2.0-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Upload to unstable (Closes: 945435)
+  * Apply upstream commit c4a79c79f0da2e6385eab0d89bf5c6546b15e373
+    "More updates to make Python 3 compatible" (Closes: 943761)
+  * Add breaks and replaces on python-nototools.
+  * Fix clean target.
+
+ -- Peter Michael Green <plugwash@debian.org>  Sat, 21 Dec 2019 04:07:54 +0000
+
+nototools (0.2.0-1) experimental; urgency=medium
+
+  * New upstream release
+  * Build python3-nototools and drop python-nototools (Closes: #937162)
+  * Build-Depend on debhelper-compat 12 and drop debian/compat
+  * Build-Depend on dh-sequence-python3
+  * Build-Depend on python3-coverage for build tests
+  * Cherry-pick test_vertical_extension-correctly-use-local-import.patch
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 21 Oct 2019 07:04:18 -0400
+
+nototools (0~20170925-1) unstable; urgency=low
+
+  * Initial release. Closes: #848206
+
+ -- Jeremy Bicha <jbicha@debian.org>  Wed, 01 Nov 2017 03:04:54 -0400

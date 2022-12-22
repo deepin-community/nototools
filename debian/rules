@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=nototools
+
+%:
+	dh $@ --buildsystem=pybuild
+
+# Keep one script needed for fonts-noto-color-emoji
+# but rename it to drop the .py extension (Debian Policy §10.4)
+# Beware installing other scripts to PATH because some like scale
+# are too generic.
+# create_image needs python3-cairo
+# /usr/bin/notodiff requires python3-booleanoperations
+execute_before_dh_install:
+	mv debian/python3-nototools/usr/bin/add_vs_cmap.py \
+	   debian/python3-nototools/usr/bin/add_vs_cmap
+	rm debian/python3-nototools/usr/bin/*.py
+	rm debian/python3-nototools/usr/bin/notocoverage
+	rm debian/python3-nototools/usr/bin/notodiff
+
+execute_after_dh_auto_clean:
+	rm -rf nototools.egg-info
+	# https://bugs.debian.org/973061
+	rm nototools/_version.py
