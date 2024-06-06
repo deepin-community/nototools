@@ -1,3 +1,16 @@
+nototools (0.2.17-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 15 Sep 2022 06:50:52 -0400
+
+nototools (0.2.16-1) unstable; urgency=medium
+
+  * New upstream version 0.2.16
+  * Bump minimum python3 to 3.7
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 21 Nov 2021 12:40:31 -0500
+
 nototools (0.2.13-2) unstable; urgency=high
 
   * Team upload.

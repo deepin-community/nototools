@@ -166,7 +166,7 @@ def get_bumped_version(ttfont, is_hinted=None):
     fixed_revision = misc.fixedTools.floatToFixed(float_revision, 16)
     rt_float_rev = misc.fixedTools.fixedToFloat(fixed_revision, 16)
     rt_float_rev_int = int(rt_float_rev)
-    rt_float_rev_frac = int(round((rt_float_rev - rt_float_rev_int) * 10 ** accuracy))
+    rt_float_rev_frac = int(round((rt_float_rev - rt_float_rev_int) * 10**accuracy))
     rt_new_revision = (
         str(rt_float_rev_int) + "." + str(rt_float_rev_frac).zfill(accuracy)
     )
@@ -236,7 +236,8 @@ def _swat_font(noto_font, dst_root, dry_run):
         new_description = None
 
     if re.match(
-        r"^Copyright 201\d Google Inc. All Rights Reserved\.$", names[_COPYRIGHT_ID]
+        r"^Copyright 20[12]\d Google (Inc|LLC). All Rights Reserved\.$",
+        names[_COPYRIGHT_ID],
     ):
         new_copyright = None
     else:
@@ -280,6 +281,8 @@ def _swat_font(noto_font, dst_root, dry_run):
     if names.get(_MANUFACTURER_ID) in [
         "Monotype Imaging Inc.",
         "Danh Hong",
+        "Google LLC",
+        "Google Inc.",
     ]:
         new_manufacturer = None
     else:
