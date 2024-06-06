@@ -19,6 +19,6 @@ execute_before_dh_install:
 	rm debian/python3-nototools/usr/bin/notodiff
 
 execute_after_dh_auto_clean:
-	rm -rf nototools.egg-info
+	rm -rf notofonttools*.egg-info
 	# https://bugs.debian.org/973061
 	rm nototools/_version.py

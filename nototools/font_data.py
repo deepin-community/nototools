@@ -108,7 +108,7 @@ def get_os2_unicoderange_bitmap(font):
 
 def set_os2_unicoderange_bitmap(font, bitmap):
     """Set the UnicodeRange fields in the os/2 table from the 128 bits of the
-       long integer bitmap."""
+    long integer bitmap."""
     os2_table = font["OS/2"]
     mask = (1 << 32) - 1
     os2_table.ulUnicodeRange1 = bitmap & mask
@@ -176,7 +176,7 @@ def printable_font_revision(font, accuracy=2):
     font_revision = font["head"].fontRevision
     font_revision_int = int(font_revision)
     font_revision_frac = int(
-        round((font_revision - font_revision_int) * 10 ** accuracy)
+        round((font_revision - font_revision_int) * 10**accuracy)
     )
 
     font_revision_int = str(font_revision_int)
